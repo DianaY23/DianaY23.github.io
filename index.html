@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Олег Ярышев — стоматолог-хирург, имплантолог в Шахтах. Удаление зубов любой сложности, зуб мудрости, имплантация, виниры, протезирование. Бесплатная консультация. Запишитесь сейчас!">
+    <meta name="keywords" content="стоматолог Шахты, стоматолог хирург Шахты, имплантолог Шахты, удаление зуба Шахты, вырвать зуб Шахты, зуб мудрости удаление Шахты, имплантация зубов Шахты, виниры Шахты, коронки Шахты, протезирование зубов Шахты, лечение зубов Шахты, стоматология Шахты, врач стоматолог Шахты, Олег Ярышев, стоматолог хирург имплантолог, удаление зуба мудрости, синус-лифтинг Шахты, костная пластика Шахты, all-on-4 Шахты, цена имплантации Шахты, записаться к стоматологу Шахты">
+    <title>Олег Ярышев | Стоматолог-хирург, имплантолог | Шахты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #EFF5FF 0%, #E8F0FE 100%);
+            color: #1A3A4F;
+            overflow-x: hidden;
+        }
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 10% 20%, #D9E9FF 0%, #F0F6FF 50%, #FFFFFF 100%);
+        }
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E6F8F, #2C8EAF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .phone-nav {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1E6F8F;
+            text-decoration: none;
+            background: rgba(30, 111, 143, 0.08);
+            padding: 10px 24px;
+            border-radius: 60px;
+            border: 1px solid rgba(30, 111, 143, 0.3);
+            transition: 0.2s;
+        }
+        .hero {
+            padding: 40px 0 60px;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        @media (max-width: 1000px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .container { padding: 0 24px; }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(95deg, #1E6F8F, #4AA3C2);
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #155A78, #1E6F8F, #2C8EAF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 24px;
+            margin: 28px 0;
+            flex-wrap: wrap;
+        }
+        .stat-glow {
+            background: white;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            border: 1px solid #C5E0F0;
+            color: #1E6F8F;
+        }
+        .hero-text-dark {
+            font-size: 1.1rem;
+            color: #1E3A4F;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .avatar-large {
+            width: 500px;
+            height: 565px;
+            border-radius: 32px;
+            object-fit: cover;
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+            border: 4px solid white;
+            cursor: pointer;
+        }
+        .photo-effect {
+            position: relative;
+            display: inline-block;
+        }
+        .photo-overlay-text {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, #1E6F8F, #2C8EAF);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: 0 8px 20px rgba(30,111,143,0.3);
+            transition: all 0.3s;
+        }
+        .photo-effect:hover .photo-overlay-text {
+            transform: scale(1.05);
+        }
+        .promo-mega {
+            background: linear-gradient(125deg, #EFF9FF, #FFFFFF);
+            padding: 40px 48px;
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            border: 1px solid rgba(30,111,143,0.3);
+            border-radius: 48px;
+        }
+        .promo-content {
+            flex: 2;
+        }
+        .promo-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1E6F8F;
+        }
+        .price-big {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E6F8F, #2C8EAF);
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            color: white;
+            margin: 15px 0;
+        }
+        .promo-features {
+            flex: 1;
+            background: rgba(30,111,143,0.08);
+            border-radius: 32px;
+            padding: 20px;
+            border-left: 3px solid #2C8EAF;
+        }
+        .promo-features p {
+            margin: 10px 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .promo-photo img {
+            width: 100%;
+            max-width: 240px;
+            border-radius: 32px;
+            cursor: pointer;
+        }
+        .main-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 48px;
+            margin: 40px 0;
+            border: 1px solid rgba(30,111,143,0.2);
+        }
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1E6F8F;
+            border-left: 5px solid #2C8EAF;
+            padding-left: 24px;
+            margin-bottom: 32px;
+        }
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        @media (max-width: 860px) {
+            .two-cols { grid-template-columns: 1fr; }
+            .avatar-large { width: 280px; height: 280px; }
+        }
+        .edu-entry {
+            margin-bottom: 28px;
+            border-bottom: 1px solid #E2EEF5;
+            padding-bottom: 20px;
+        }
+        .edu-year { font-weight: 700; color: #2C8EAF; font-size: 0.85rem; }
+        .monograph-card { background: #F5FAFE; padding: 24px; border-radius: 28px; margin-top: 20px; border: 1px solid #D9E9F5; }
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .skill-tag {
+            background: #EFF5FC;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #D0E4F0;
+            color: #1E6F8F;
+            transition: 0.2s;
+        }
+        .skill-tag:hover {
+            background: #1E6F8F;
+            color: white;
+        }
+        .treatment-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        @media (max-width: 1200px) {
+            .treatment-gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 700px) {
+            .treatment-gallery { grid-template-columns: 1fr; }
+        }
+        .treatment-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #E2EEF5;
+        }
+        .treatment-card:hover {
+            transform: translateY(-8px);
+            border-color: #2C8EAF;
+            box-shadow: 0 20px 30px -12px rgba(30,111,143,0.2);
+        }
+        .treatment-img {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #F5FAFE, #FFFFFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .treatment-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .treatment-info {
+            padding: 16px;
+            text-align: center;
+        }
+        .treatment-name {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .treatment-percent {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2C8EAF;
+            margin-top: 6px;
+        }
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .cases-grid-second {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .cases-grid-third {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        @media (max-width: 900px) {
+            .cases-grid, .cases-grid-second, .cases-grid-third { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .cases-grid, .cases-grid-second, .cases-grid-third { grid-template-columns: 1fr; }
+        }
+        .case-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #E2EEF5;
+        }
+        .case-card:hover { transform: translateY(-6px); border-color: #2C8EAF; }
+        .case-img { width: 100%; height: 220px; object-fit: cover; cursor: pointer; }
+        .case-info { padding: 20px; text-align: center; }
+        .case-title { font-weight: 700; font-size: 1.1rem; color: #1E6F8F; margin-bottom: 8px; }
+        .detail-btn { background: none; border: none; color: #2C8EAF; font-weight: 600; margin-top: 12px; cursor: pointer; }
+        .reviews-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        @media (max-width: 900px) { .reviews-row { grid-template-columns: 1fr; } }
+        .review-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            padding: 28px;
+            border-left: 6px solid #2C8EAF;
+        }
+        .prodoctorov-link {
+            margin-top: 24px;
+            text-align: center;
+        }
+        .prodoctorov-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #EFF5FC;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #1E6F8F;
+            font-weight: 600;
+            transition: 0.2s;
+            border: 1px solid #D0E4F0;
+        }
+        .prodoctorov-link a:hover {
+            background: #104a60;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* ГАЛЕРЕЯ СЕРТИФИКАТОВ */
+        .certificates-gallery {
+            position: relative;
+            margin-top: 30px;
+            padding: 0 50px;
+        }
+        .certificates-container {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+        }
+        .certificates-container::-webkit-scrollbar {
+            height: 8px;
+            background: #E2EEF5;
+            border-radius: 10px;
+        }
+        .certificates-container::-webkit-scrollbar-thumb {
+            background: #2C8EAF;
+            border-radius: 10px;
+        }
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            min-width: max-content;
+        }
+        .cert-item {
+            width: 280px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #E2EEF5;
+        }
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(30,111,143,0.15);
+            border-color: #2C8EAF;
+        }
+        .cert-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .cert-item p {
+            padding: 12px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #1E6F8F;
+            font-weight: 500;
+            background: #F9FCFE;
+            border-top: 1px solid #E2EEF5;
+        }
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            z-index: 5;
+            border: 1px solid #2C8EAF;
+            color: #1E6F8F;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .gallery-nav:hover {
+            background: #1E6F8F;
+            color: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .gallery-nav-left {
+            left: 0;
+        }
+        .gallery-nav-right {
+            right: 0;
+        }
+        @media (max-width: 768px) {
+            .certificates-gallery {
+                padding: 0 30px;
+            }
+            .cert-item {
+                width: 220px;
+            }
+        }
+        
+        /* НОВЫЙ БЛОК - ПРИВЛЕКАТЕЛЬНЫЕ ПРЕИМУЩЕСТВА */
+        .offer-block {
+            background: linear-gradient(135deg, #1E6F8F, #2C8EAF);
+            border-radius: 48px;
+            padding: 56px 52px;
+            margin: 48px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-block::before {
+            content: "🦷";
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.08;
+            bottom: -40px;
+            right: -40px;
+            pointer-events: none;
+        }
+        .offer-block::after {
+            content: "✨";
+            position: absolute;
+            font-size: 140px;
+            opacity: 0.08;
+            top: -30px;
+            left: -30px;
+            pointer-events: none;
+        }
+        .offer-block h2 {
+            color: white;
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+        }
+        .offer-block p {
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        .offer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .offer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 16px 36px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .offer-btn-phone {
+            color: #1E6F8F;
+            background: white;
+        }
+        .offer-btn-wa {
+            background: #25D366;
+            color: white;
+        }
+        .offer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+        .offer-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .offer-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+        }
+        .contact-row {
+            display: flex; align-items: center; gap: 15px;
+            background: #F5FAFE; padding: 14px 24px;
+            border-radius: 60px; text-decoration: none; color: #1A3A4F;
+            margin-bottom: 14px; border: 1px solid #D0E4F0;
+        }
+        .contact-row:hover {
+            background: #FFFFFF;
+            border-color: #2C8EAF;
+            transform: translateX(5px);
+        }
+        .info-badge {
+            background: #EFF5FC;
+            border-radius: 28px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .achievement-photo {
+            margin-top: 32px;
+            background: #F5FAFE;
+            border-radius: 28px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #D9E9F5;
+        }
+        .achievement-photo img {
+            width: 100%;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+        footer { text-align: center; padding: 40px 20px; color: #6F8FA0; }
+        .modal-full {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center;
+            cursor: pointer;
+        }
+        .modal-full img { max-width: 85vw; max-height: 85vh; border-radius: 24px; }
+        .case-modal-detail, .treatment-modal-detail {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center;
+        }
+        .case-detail-card {
+            background: #FFFFFF; max-width: 500px; padding: 32px; border-radius: 48px;
+            border: 1px solid #2C8EAF; color: #1A3A4F;
+        }
+        .faq-item { border-bottom: 1px solid #E2EEF5; margin-bottom: 8px; }
+        .faq-q { font-weight: 700; padding: 18px 0; cursor: pointer; display: flex; justify-content: space-between; color: #1E6F8F; }
+        .faq-a { max-height: 0; overflow: hidden; transition: 0.3s; color: #5A7F94; }
+        .faq-a.show { max-height: 200px; padding-bottom: 20px; }
+        .modal-booking {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 10001;
+            justify-content: center; align-items: center;
+        }
+        .modal-booking-content {
+            background: white; max-width: 550px; width: 90%; border-radius: 48px;
+            padding: 40px; position: relative; box-shadow: 0 30px 50px rgba(0,0,0,0.2);
+            border: 1px solid #2C8EAF;
+        }
+        .modal-booking-content h3 { font-size: 1.8rem; color: #1E6F8F; text-align: center; margin-bottom: 8px; }
+        .close-modal-booking {
+            position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: #8AAEC2;
+        }
+        .close-modal-booking:hover { color: #1E6F8F; }
+    </style>
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<div class="gradient-bg"></div>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">🦷 Олег Евгеньевич Ярышев</div>
+        <div class="nav-buttons">
+            <a href="tel:+79191883434" class="phone-nav">+7 (919) 188-34-34</a>
+            <a href="https://wa.me/79191883434?text=Здравствуйте!%20Хочу%20записаться%20на%20приём%20к%20Олегу%20Евгеньевичу" class="phone-nav" target="_blank" style="background: #25D366; color: white; border-color: #25D366;">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-grid">
+            <div class="hero-info">
+                <div class="hero-badge">✨ Сделаем улыбку, которой невозможно отказать ✨</div>
+                <h1>Олег Евгеньевич Ярышев<br>врач-стоматолог</h1>
+                <p class="hero-text-dark">Опыт работы с 2001 г. Шахты, Ростовская область.</p>
+                <div class="hero-stats">
+                    <span class="stat-glow">🏆 250+ операций</span>
+                    <span class="stat-glow">⭐ 4.96 / 65 отзывов</span>
+                    <span class="stat-glow">✔️ Документы проверены</span>
+                    <span class="stat-glow">📈 Регулярное повышение квалификации</span>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="photo-effect">
+                    <img src="/images/avatar.JPG" alt="Олег Ярышев" class="avatar-large" id="mainAvatar" onerror="this.src='https://placehold.co/500x500/D9E9FF/1E6F8F?text=Dr.Yaryshev'">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="promo-mega">
+        <div class="promo-content">
+            <div class="promo-title">🎁 АКЦИЯ: ПРИЁМ + КОНСУЛЬТАЦИЯ</div>
+            <div class="price-big">БЕСПЛАТНО</div>
+        </div>
+        <div class="promo-features">
+            <p>✅ Приём в любое удобное время (без выходных)</p>
+            <p>✅ Любой вид терапевтического, ортопедического и хирургического лечения</p>
+            <p>✅ Решение экстренных случаев (даже в позднее время)</p>
+            <p>✅ Работа с ведущими имплантационными системами</p>
+        </div>
+        <div class="promo-photo">
+            <img src="/images/прием.jpg" id="promoPhoto" alt="Приём" onerror="this.src='https://placehold.co/400x400/E8F0FE/1E6F8F?text=Приём+врача'">
+        </div>
+    </div>
+
+    <div class="main-card">
+        <h2>О себе</h2>
+        <p style="margin-bottom: 32px; color: #2A5A70;">Специализируюсь на сложной хирургической стоматологии, имплантации всех уровней сложности, костной пластике и полным спектром терапевтических и ортопедических услуг. Провожу удаление зубов любой сложности (включая ретинированные зубы мудрости), синус-лифтинг, аугментацию костной ткани. Работаю с ведущими имплантационными системами (Straumann, Nobel Biocare, Osstem, Astra Tech, Dentium, NeoBiotec)</p>
+        
+        <div class="two-cols">
+            <div>
+                <h2>Образование</h2>
+                <div class="edu-entry"><div class="edu-year">2001</div><div>Национальный медицинский университет им. Богомольца, стоматологический факультет</div></div>
+                <div class="edu-entry"><div class="edu-year">2016</div><div>Ростовский государственный медицинский университет, стоматология общей практики</div></div>
+                <div class="edu-entry"><div class="edu-year">2019</div><div>Стоматология хирургическая, профессиональная переподготовка</div></div>
+                <h2>Монография</h2>
+                <div class="monograph-card">
+                    <div style="font-weight:800; color:#1E6F8F;">«Депофорез гидроокиси меди кальция. Клинический опыт применения технологии»</div>
+                    <div style="color:#6F8FA0;">Стомотологическая Клиника «Маранта», Киев, 2009</div>
+                </div>
+            </div>
+            <div>
+                <div class="achievement-photo">
+                    <img src="/images/фотосессия.jpg" alt="Олег Ярышев" id="certPhoto" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=Сертификаты+и+дипломы'">
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="margin-top: 48px;">Ключевые курсы повышения квалификации</h2>
+        <div class="skills-tags">
+            <span class="skill-tag">Имплантология: от простого к сложному (Москва, 2023)</span>
+            <span class="skill-tag">Костная пластика и синус-лифтинг (СПб, 2022)</span>
+            <span class="skill-tag">Хирургия полости рта под микроскопом (2024)</span>
+            <span class="skill-tag">All-on-4: протоколы лечения (Международный симпозиум, 2024)</span>
+        </div>
+    </div>
+    
+    <div class="main-card">
+        <h2>Профиль лечения (статистика)</h2>
+        <div class="treatment-gallery" id="treatmentGallery"></div>
+    </div>
+
+    <div class="main-card">
+        <h2>Клинические кейсы</h2>
+        <div class="cases-grid" id="casesGrid"></div>
+        <div class="cases-grid-second" id="casesGridSecond"></div>
+        <div class="cases-grid-third" id="casesGridThird"></div>
+    </div>
+
+    <div class="main-card">
+        <h2>Отзывы пациентов</h2>
+        <div class="reviews-row">
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ Тимофей С.</strong><br>«Особую благодарность хочу выразить врачу Ярышеву Олегу Евгеньевичу за качественное лечение и внимательное отношение. Операция по имплантации прошла безболезненно.»</div>
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ Екатерина П.</strong><br>«Огромное материнское спасибо Олегу Евгеньевичу! Единственный врач, который установил причину проблемы у моего ребенка, и решил ее.»</div>
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ Анжела К.</strong><br>«Олег Евгеньевич врач от бога! Высококвалифицированный, внимательный, корректный, грамотный, работающий по новым технологиям.»</div>
+        </div>
+        <div class="reviews-row" style="margin-top: 28px;">
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ Светлана Л.</strong><br>«Доктор Ярышев без проблем сделал работу, рассказал что к чему и посоветовал уход. Если будет потребность, то только к Вам!»</div>
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ Лиза М.</strong><br>«Быстрое удаление семерок абсолютно без боли, не почувствовала даже укола. Спасибо доктору.»</div>
+            <div class="review-card"><strong>⭐⭐⭐⭐⭐ koncert-Galaxy</strong><br>«Рекомендую эту клинику всем, кто ищет качественную и профессиональную помощь в области имплантологии!»</div>
+        </div>
+        <div class="prodoctorov-link">
+            <a href="https://prodoctorov.ru/shahty/vrach/587210-yaryshev" target="_blank" rel="noopener noreferrer">
+                <span>⭐</span> Читать больше отзывов на ПроДокторов <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ГАЛЕРЕЯ СЕРТИФИКАТОВ -->
+    <div class="main-card">
+        <h2>Сертификаты и дипломы</h2>
+        <div class="certificates-gallery">
+            <div class="gallery-nav gallery-nav-left" id="certScrollLeft">←</div>
+            <div class="certificates-container" id="certificatesContainer">
+                <div class="certificates-grid" id="certificatesGrid"></div>
+            </div>
+            <div class="gallery-nav gallery-nav-right" id="certScrollRight">→</div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #5A7F94;">← → Листайте галерею | Нажмите на сертификат для увеличения</p>
+    </div>
+
+    <div class="main-card">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-item"><div class="faq-q">🔵 Что необходимо сделать перед приёмом?</div><div class="faq-a">Желательно сделать снимок КТ (если есть) и взять с собой. За 2 часа до приёма можно легко перекусить. При себе иметь паспорт.</div></div>
+        <div class="faq-item"><div class="faq-q">🔵 Как проходит первичная консультация?</div><div class="faq-a">Осмотр полости рта, анализ КТ-снимка, составление подробного плана лечения, ответы на все вопросы. Длительность 30-60 минут.</div></div>
+        <div class="faq-item"><div class="faq-q">🔵 Сколько длится имплантация?</div><div class="faq-a">Установка имплантата занимает 30-60 минут. Через 3-6 месяцев устанавливается коронка. Всё проходит под местной анестезией без боли.</div></div>
+        <div class="faq-item"><div class="faq-q">🔵 Есть ли гарантия на лечение?</div><div class="faq-a">Да, на имплантаты предоставляется пожизненная гарантия от производителя, на работы — до 10 лет. Все документы оформляются официально.</div></div>
+    </div>
+
+    <!-- ПРИВЛЕКАТЕЛЬНЫЙ БЛОК -->
+    <div class="offer-block">
+        <h2>✨ Улыбнитесь своей мечте ✨</h2>
+        <p>Запишитесь на бесплатную консультацию уже сегодня</p>
+        <div class="offer-buttons">
+            <a href="tel:+79191883434" class="offer-btn offer-btn-phone">📞 Позвонить</a>
+            <a href="https://wa.me/79191883434?text=Здравствуйте!%20Хочу%20записаться%20на%20приём%20к%20Олегу%20Евгеньевичу" class="offer-btn offer-btn-wa" target="_blank">💬 Написать в WhatsApp</a>
+        </div>
+        <div class="offer-features">
+            <span class="offer-feature">🦷 Без боли</span>
+            <span class="offer-feature">⭐ 4.96 рейтинг</span>
+            <span class="offer-feature">📅 Запись 24/7</span>
+            <span class="offer-feature">🏆 Любые виды ортопедических и терапевтических услуг</span>
+        </div>
+    </div>
+
+    <footer>© 2026 Олег Ярышев — стоматолог-хирург, имплантолог. Имеются противопоказания, необходима консультация специалиста.</footer>
+</div>
+
+<div id="modalBooking" class="modal-booking">
+    <div class="modal-booking-content">
+        <span class="close-modal-booking" id="closeModalBtn">&times;</span>
+        <h3>📅 Запись на приём</h3>
+        <p style="text-align: center; margin-bottom: 24px; color: #5A7F94;">Оставьте номер — мы перезвоним через 15 минут</p>
+        <form id="modalBookingForm">
+            <input type="tel" placeholder="Телефон" required>
+            <button type="submit" class="btn-full">✅ Отправить</button>
+        </form>
+    </div>
+</div>
+
+<div id="modalZoom" class="modal-full"><span style="position:absolute; top:20px; right:35px; font-size:48px; color:white; cursor:pointer;">&times;</span><img id="modalImgZoom" src=""></div>
+<div id="caseModal" class="case-modal-detail"><div class="case-detail-card"><span style="float:right; font-size:28px; cursor:pointer;" onclick="closeCaseModal()">&times;</span><h3 id="modalCaseTitle"></h3><p id="modalCaseText"></p></div></div>
+<div id="treatmentModal" class="treatment-modal-detail"><div class="case-detail-card"><span style="float:right; font-size:28px; cursor:pointer;" onclick="closeTreatmentModal()">&times;</span><h3 id="treatmentModalTitle"></h3><p id="treatmentModalDesc"></p></div></div>
+
+<script>
+    // Частицы
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particles = [];
+    for(let i=0;i<60;i++) particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, radius:Math.random()*2+1, alpha:Math.random()*0.3+0.1, vx:(Math.random()-0.5)*0.2, vy:(Math.random()-0.5)*0.15});
+    function animateParticles() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0)p.x=canvas.width; if(p.x>canvas.width)p.x=0; if(p.y<0)p.y=canvas.height; if(p.y>canvas.height)p.y=0; ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2); ctx.fillStyle=`rgba(44,142,175,${p.alpha})`; ctx.fill(); });
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+    window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
+
+    // Данные профиля лечения (оригинальные названия)
+    const treatments = [
+        { name:"Кариес", percent:"18%", img:"/images/кариес.JPG", desc:"Лечение кариеса любой сложности." },
+        { name:"Гингивит", percent:"16%", img:"images/гингвит.JPG", desc:"Лечение воспаления дёсен, профессиональная гигиена." },
+        { name:"Пульпит зуба", percent:"10%", img:"images/пульпит_зуба.JPG", desc:"Эндодонтическое лечение." },
+        { name:"Периодонтит", percent:"8%", img:"images/периодонтит.JPG", desc:"Сложные случаи периодонтита, депофорез." },
+        { name:"Пародонтит", percent:"6%", img:"images/пародонтит.JPG", desc:"Пародонтологическое лечение, PRF-терапия." },
+        { name:"Язвенный гингивит", percent:"5%", img:"images/язвенный_гингвит.JPG", desc:"Противовоспалительная терапия." },
+        { name:"Язвенный стоматит", percent:"4%", img:"images/язвенный_стоматит.JPG", desc:"Диагностика и лечение стоматитов, подбор иммунокоррекции." },
+        { name:"Афтозный стоматит", percent:"3%", img:"images/афтозный_стоматит.JPG", desc:"Устранение хронических рецидивирующих афт." },
+        { name:"Повышенная стираемость", percent:"4%", img:"images/повышенная_стираемость.JPG", desc:"Восстановление высоты окклюзии, коронки, вкладки." },
+        { name:"Установка виниров", percent:"8%", img:"images/виниры.JPG", desc:"Эстетическая реставрация керамическими винирами." },
+        { name:"Ортопедическое лечение", percent:"12%", img:"images/ортопед_лечение.JPG", desc:"Коронки из диоксида циркония, протезирование." },
+        { name:"Имплантация / операции", percent:"6%", img:"images/иплантация.JPG", desc:"Имплантация, синус-лифтинг, костная пластика." }
+    ];
+    const gallery = document.getElementById('treatmentGallery');
+    treatments.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'treatment-card';
+        card.onclick = () => { document.getElementById('treatmentModalTitle').innerText = t.name; document.getElementById('treatmentModalDesc').innerHTML = `<strong>${t.percent} случаев</strong><br>${t.desc}`; document.getElementById('treatmentModal').style.display = 'flex'; };
+        card.innerHTML = `<div class="treatment-img"><img src="${t.img}" alt="${t.name}" onerror="this.src='https://placehold.co/400x300/E8F0FE/1E6F8F?text=${t.name}'"></div><div class="treatment-info"><div class="treatment-name">${t.name}</div><div class="treatment-percent">${t.percent}</div></div>`;
+        gallery.appendChild(card);
+    });
+
+    // Первый ряд кейсов (3 фото)
+    const casesFirst = [
+        { title:"All-on-4 полная реабилитация", img:"images/all-4.jpg", desc:"Восстановление всей челюсти на 4 имплантатах." },
+        { title:"All-on-4 полная реабилитация", img:"images/all-on-4-1.JPG", desc:"Восстановление всей челюсти на 4 имплантатах." },
+        { title:"Модель импланта", img:"images/модель_установки.JPG", desc:"Восстановление зубов винирами из диоксида циркония." }
+    ];
+    
+    // Второй ряд кейсов (3 фото)
+    const casesSecond = [
+        { title:"Модель импланта", img:"images/модель4.JPG", desc:"Восстановление зубов винирами из диоксида циркония." },
+        { title:"Модель импланта", img:"images/модель7.JPG", desc:"Восстановление зубов винирами из диоксида циркония." },
+        { title:"All-on-4 полная реабилитация", img:"images/модель6-1.jpg", desc:"Восстановление всей челюсти на 4 имплантатах." }
+    ];
+    
+    // Третий ряд кейсов (3 новых фото)
+    const casesThird = [
+        { title:"Восстановление высоты окклюзии и тотальное протезирование полости рта. Восстановление высоты нижней трети лица", img:"images/высота_лица.jpg", desc:"Комплексное восстановление прикуса и высоты нижней трети лица с помощью ортопедических конструкций." },
+        { title:"Изготовление временного \"Мерилендского моста\" по показаниям", img:"images/мост.JPG", desc:"Временное протезирование по показаниям с использованием адгезивных технологий." },
+        { title:"Изменение формы фронтальных зубов верхней челюсти", img:"images/форма_зубов.jpg", desc:"Эстетическая коррекция формы и размера передних зубов, создание гармоничной улыбки." }
+    ];
+    
+    const casesGrid = document.getElementById('casesGrid');
+    casesFirst.forEach((c,idx) => {
+        const card = document.createElement('div'); card.className = 'case-card';
+        card.innerHTML = `<img class="case-img" src="${c.img}" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=${c.title}'"><div class="case-info"><div class="case-title">${c.title}</div><button class="detail-btn" onclick="showCaseDetail('first', ${idx})">Подробнее →</button></div>`;
+        casesGrid.appendChild(card);
+    });
+    
+    const casesGridSecond = document.getElementById('casesGridSecond');
+    casesSecond.forEach((c,idx) => {
+        const card = document.createElement('div'); card.className = 'case-card';
+        card.innerHTML = `<img class="case-img" src="${c.img}" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=${c.title}'"><div class="case-info"><div class="case-title">${c.title}</div><button class="detail-btn" onclick="showCaseDetail('second', ${idx})">Подробнее →</button></div>`;
+        casesGridSecond.appendChild(card);
+    });
+    
+    const casesGridThird = document.getElementById('casesGridThird');
+    casesThird.forEach((c,idx) => {
+        const card = document.createElement('div'); card.className = 'case-card';
+        card.innerHTML = `<img class="case-img" src="${c.img}" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=${c.title}'"><div class="case-info"><div class="case-title">${c.title}</div><button class="detail-btn" onclick="showCaseDetail('third', ${idx})">Подробнее →</button></div>`;
+        casesGridThird.appendChild(card);
+    });
+    
+    window.showCaseDetail = (type, idx) => { 
+        let caseData;
+        if(type === 'first') caseData = casesFirst[idx];
+        else if(type === 'second') caseData = casesSecond[idx];
+        else caseData = casesThird[idx];
+        document.getElementById('modalCaseTitle').innerText = caseData.title; 
+        document.getElementById('modalCaseText').innerHTML = caseData.desc;
+        document.getElementById('caseModal').style.display = 'flex'; 
+    };
+    window.closeCaseModal = () => document.getElementById('caseModal').style.display = 'none';
+    window.closeTreatmentModal = () => document.getElementById('treatmentModal').style.display = 'none';
+    document.getElementById('caseModal')?.addEventListener('click',(e)=>{if(e.target===document.getElementById('caseModal')) closeCaseModal();});
+    document.getElementById('treatmentModal')?.addEventListener('click',(e)=>{if(e.target===document.getElementById('treatmentModal')) closeTreatmentModal();});
+
+    // ГАЛЕРЕЯ СЕРТИФИКАТОВ (полный список)
+    const certificatesList = [
+        { img: "images/diploma1.jpg", title: "Диплом НМУ им. Богомольца, 2001" },
+        { img: "images/diploma3.jpg", title: "Диплом о профессиональной переподготовке, Стомотологическая хирургия, 2019" },
+        { img: "images/diploma2.jpg", title: "Удостоверение о повышении квалификации, Стомотология общей практики, 2016" },
+        { img: "images/cert_24.jpg", title: "Сертификат специалиста Москва 2019 г" },
+        { img: "images/cert4.jpg", title: "Ортопедия на имплантах, 2017"},
+        { img: "images/cert1.jpg", title: "Технологии профилактики в технической стомотологии, 2004" },
+        { img: "images/cert_6.jpg", title: "Применение совеременных никель-титановых интструментов Proteper" },
+        { img: "images/cert2.jpg", title: "Безметалловое протезирование" },
+        { img: "images/cert_7.jpg", title: "Международный семинар имплантации" },
+        { img: "images/cert_26.jpg", title: "Отбеливание зубов" },
+        { img: "images/cert_30.jpg", title: "Эстетическая реабилитация зубов" },
+        { img: "images/cert_11.jpg", title: "Безметалловое протезирование, 2009" },
+        { img: "images/cert_10.jpg", title: "Организация лечебной работы в стомотологической клинике, 2010" },
+        { img: "images/cert_12.jpg", title: "Имплантация и имплантация на суперструктурах, 2017" },
+        { img: "images/cert_13.jpg", title: "Новые подходы к эндодонтическому лечению, 2014" },
+        { img: "images/cert_14.jpg", title: "Ортопедическая стомотология, 2002" },
+        { img: "images/cert_15.jpg", title: "Ортопедическая стомотология, 2007" },
+        { img: "images/cert_35.jpg", title: "Конгресс профессиональная имплантология, 2014" },
+        { img: "images/cert_17.jpg", title: "Керамические вкладки, 2002" },
+        { img: "images/cert_18.jpg", title: "Osstem имплантация" },
+        { img: "images/cert_19.jpg", title: "Техника эндодонтического доступа, 2015" },
+        { img: "images/cert_20.jpg", title: "Отбелиание зубов, 2016" },
+        { img: "images/cert_21.jpg", title: "Конгресс Стомотологов" },
+        { img: "images/cert_22.jpg", title: "Достижение оптимальной эстетики в ортопедической стомотологии, 2008" },
+        { img: "images/cert_23.jpg", title: "Просто об эстетике, 2016" },
+        { img: "images/cert_24.jpg", title: "Клинические аспекты изготовления безметалловых конструкций, 2015" },
+        { img: "images/cert_25.jpg", title: "Трехмерная радиодиагностика в стомотологии, 2012" },
+        { img: "images/cert_8.jpg", title: "Функциональные и эссетические особенности реставрации жевательной группы зубов, 2012" },
+        { img: "images/cert_27.jpg", title: "Месяц здоровой улыбки, 2010" },
+        { img: "images/cert_28.jpg", title: "Основы дентальной имплантологии" },
+        { img: "images/cert_29.jpg", title: "Клинические и технические аспекты применения CAD/CAM, 2009" },
+        { img: "images/cert_9.jpg", title: "Сложная анатомия корневых каналов и эндодонтический доступ, 2016" },
+        { img: "images/cert_31.jpg", title: "Профессионалльное тестирование пасту Colgate, 2010" },
+        { img: "images/cert_32.jpg", title: "Протезирование на имплантах. Базовый курс, 2003" },
+        { img: "images/cert_33.jpg", title: "Малоинвазивная эстетическая реабилитация зубов, 2018" },
+        { img: "images/cert_34.jpg", title: "Эндодонтическое лечение, реставрация, 2002" },
+        { img: "images/cert_36.jpg", title: "Съемное протезирование, 2017" },
+        { img: "images/cert_37.jpg", title: "Инновационные технологии в эстетичекой стомотологии, 2011" },
+        { img: "images/cert_38.jpg", title: "Инновационные технологии в эстетической стомотологии, 2001" }
+    ];
+
+    const certificatesGrid = document.getElementById('certificatesGrid');
+    certificatesList.forEach((cert, index) => {
+        const certDiv = document.createElement('div');
+        certDiv.className = 'cert-item';
+        certDiv.innerHTML = `
+            <img src="${cert.img}" alt="${cert.title}" onerror="this.src='https://placehold.co/400x560/E8F0FE/1E6F8F?text=${encodeURIComponent(cert.title)}'">
+            <p>${cert.title}</p>
+        `;
+        certDiv.querySelector('img').addEventListener('click', (e) => {
+            e.stopPropagation();
+            openImageModal(e.target.src);
+        });
+        certificatesGrid.appendChild(certDiv);
+    });
+
+    // Прокрутка галереи
+    const certContainer = document.getElementById('certificatesContainer');
+    document.getElementById('certScrollLeft')?.addEventListener('click', () => {
+        certContainer.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    document.getElementById('certScrollRight')?.addEventListener('click', () => {
+        certContainer.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // Модалка изображений
+    const modalDiv = document.getElementById('modalZoom');
+    const modalImg = document.getElementById('modalImgZoom');
+    function openImageModal(src) { modalDiv.style.display = 'flex'; modalImg.src = src; }
+    document.querySelector('#modalZoom span')?.addEventListener('click', () => modalDiv.style.display = 'none');
+    modalDiv.addEventListener('click', (e) => { if(e.target === modalDiv) modalDiv.style.display = 'none'; });
+    document.querySelectorAll('.avatar-large, .case-img, #promoPhoto, #certPhoto').forEach(img => { if(img) img.addEventListener('click', (e) => openImageModal(e.target.src)); });
+    
+    document.querySelectorAll('.faq-q').forEach(q=>{ q.addEventListener('click',()=>{ let a=q.nextElementSibling; a.classList.toggle('show'); if(a.classList.contains('show')) a.style.maxHeight=a.scrollHeight+'px'; else a.style.maxHeight=null; }); });
+    
+    function handleFormSubmit(form, e) {
+        e.preventDefault();
+        alert('✅ Заявка принята! Мы перезвоним вам в ближайшее время.');
+        form.reset();
+        document.getElementById('modalBooking').style.display = 'none';
+    }
+    document.getElementById('modalBookingForm')?.addEventListener('submit', (e) => handleFormSubmit(e.target, e));
+    
+    const modalBooking = document.getElementById('modalBooking');
+    document.getElementById('openModalBtn')?.addEventListener('click', () => { modalBooking.style.display = 'flex'; });
+    document.getElementById('closeModalBtn')?.addEventListener('click', () => { modalBooking.style.display = 'none'; });
+    window.addEventListener('click', (e) => { if(e.target === modalBooking) modalBooking.style.display = 'none'; });
+</script>
+</body>
+</html>
