@@ -7,7 +7,7 @@
     <meta name="keywords" content="стоматолог Шахты, стоматолог хирург Шахты, имплантолог Шахты, удаление зуба Шахты, вырвать зуб Шахты, зуб мудрости удаление Шахты, имплантация зубов Шахты, виниры Шахты, коронки Шахты, протезирование зубов Шахты, лечение зубов Шахты, стоматология Шахты, врач стоматолог Шахты, Олег Ярышев, стоматолог хирург имплантолог, удаление зуба мудрости, синус-лифтинг Шахты, костная пластика Шахты, all-on-4 Шахты, цена имплантации Шахты, записаться к стоматологу Шахты">
     <meta name="yandex-verification" content="b305f13030d032ad" />
     <link rel="icon" type="image/png" href="/favicon.png">
-    <title>Олег Евгеньевич Ярышев | Врач-стоматолог | Записаться на прием | Шахты, пр. Клименко, 12</title>
+    <title>Олег Евгеньевич Ярышев | Врач-стоматолог | Шахты, пр. Клименко, 12 | Записаться на прием </title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -484,7 +484,7 @@
             }
         }
         
-        /* НОВЫЙ БЛОК - ПРИВЛЕКАТЕЛЬНЫЕ ПРЕИМУЩЕСТВА */
+        /* БЛОК ПРИВЛЕКАТЕЛЬНЫХ ПРЕИМУЩЕСТВ */
         .offer-block {
             background: linear-gradient(135deg, #1E6F8F, #2C8EAF);
             border-radius: 48px;
@@ -659,18 +659,18 @@
         }
         .map-container {
             background: #EFF5FC;
-            min-height: 380px;
+            min-height: 320px;
         }
         .map-container iframe {
             width: 100%;
             height: 100%;
-            min-height: 380px;
+            min-height: 320px;
             border: 0;
             filter: grayscale(0.1) contrast(1.05);
             transition: all 0.3s;
         }
         .clinic-info-card {
-            padding: 48px 36px;
+            padding: 36px 32px;
             background: rgba(255,255,255,0.96);
             backdrop-filter: blur(4px);
             display: flex;
@@ -678,7 +678,7 @@
             justify-content: center;
         }
         .clinic-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #155A78, #1E6F8F);
             -webkit-background-clip: text;
@@ -690,10 +690,10 @@
             gap: 12px;
         }
         .clinic-address {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #2A5A70;
-            margin-bottom: 32px;
-            padding-bottom: 20px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
             border-bottom: 2px dashed #C5E0F0;
             display: flex;
             align-items: center;
@@ -706,19 +706,20 @@
         .clinic-features {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 36px;
+            gap: 12px;
+            margin-bottom: 28px;
         }
         .clinic-feature-item {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             font-weight: 500;
             background: #F5FAFE;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 80px;
             transition: 0.2s;
             border: 1px solid transparent;
+            font-size: 0.9rem;
         }
         .clinic-feature-item:hover {
             border-color: #2C8EAF;
@@ -729,22 +730,80 @@
             background: linear-gradient(95deg, #1E6F8F, #2C8EAF);
             border: none;
             color: white;
-            padding: 16px 24px;
+            padding: 14px 20px;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: 0.2s;
             text-align: center;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
         }
         .clinic-button:hover {
             transform: scale(1.02);
             box-shadow: 0 12px 20px -8px rgba(30,111,143,0.4);
+        }
+        
+        /* Компактная карта вверху */
+        .mini-map-block {
+            background: linear-gradient(115deg, #FFFFFF, #F0F9FF);
+            border-radius: 48px;
+            margin: 20px 0 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+            border: 1px solid rgba(44,142,175,0.3);
+        }
+        .mini-map-inner {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 0;
+        }
+        @media (max-width: 800px) {
+            .mini-map-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+        .mini-map-container {
+            background: #EFF5FC;
+            min-height: 240px;
+        }
+        .mini-map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 240px;
+            border: 0;
+        }
+        .mini-info {
+            padding: 28px 28px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .mini-info .clinic-name {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .mini-info .clinic-address {
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+        }
+        .mini-info .clinic-features {
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .mini-info .clinic-feature-item {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+        }
+        .mini-info .clinic-button {
+            padding: 10px 16px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -795,6 +854,35 @@
         </div>
         <div class="promo-photo">
             <img src="/images/прием.jpg" id="promoPhoto" alt="Приём" onerror="this.src='https://placehold.co/400x400/E8F0FE/1E6F8F?text=Приём+врача'">
+        </div>
+    </div>
+
+    <!-- НОВАЯ КАРТА ВВЕРХУ (ПОСЛЕ АКЦИИ) -->
+    <div class="mini-map-block">
+        <div class="mini-map-inner">
+            <div class="mini-map-container">
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=40.2145,47.7085&z=16&pt=40.2145,47.7085&whatshere[point]=40.2145,47.7085&whatshere[zoom]=16"
+                    allowfullscreen="true"
+                    loading="lazy"
+                    title="Карта - Стоматология на Клименко, Шахты"></iframe>
+            </div>
+            <div class="mini-info">
+                <div class="clinic-name">
+                    <span>🏛️</span> Стоматология на Клименко
+                </div>
+                <div class="clinic-address">
+                    📍 <span>пр. Клименко, 12</span>, г. Шахты
+                </div>
+                <div class="clinic-features">
+                    <div class="clinic-feature-item">🅿️ Парковка</div>
+                    <div class="clinic-feature-item">🕒 9:00–20:00 (без выходных)</div>
+                    <div class="clinic-feature-item">🔬 КТ на месте</div>
+                </div>
+                <button class="clinic-button openMapBtn">
+                    🚀 Проложить маршрут → 
+                </button>
+            </div>
         </div>
     </div>
 
@@ -898,12 +986,12 @@
         </div>
     </div>
 
-    <!-- НОВЫЙ БЛОК С КАРТОЙ И АДРЕСОМ (НЕОБЫЧНЫЙ) -->
+    <!-- ОСНОВНОЙ БЛОК С КАРТОЙ ВНИЗУ -->
     <div class="clinic-map-block">
         <div class="clinic-map-inner">
             <div class="map-container">
                 <iframe 
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae2a3b9c1d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2&source=constructor" 
+                    src="https://yandex.ru/map-widget/v1/?ll=40.2145,47.7085&z=17&pt=40.2145,47.7085&whatshere[point]=40.2145,47.7085&whatshere[zoom]=17"
                     allowfullscreen="true"
                     loading="lazy"
                     title="Карта - Стоматология на Клименко, Шахты"></iframe>
@@ -921,7 +1009,7 @@
                     <div class="clinic-feature-item">🕒 Работаем с 9:00 до 20:00 (без выходных)</div>
                     <div class="clinic-feature-item">🔬 Современное оборудование и КТ на месте</div>
                 </div>
-                <button class="clinic-button" id="openMapModalBtn">
+                <button class="clinic-button openMapBtn">
                     🚀 Проложить маршрут в Яндекс.Картах → 
                 </button>
             </div>
@@ -963,7 +1051,7 @@
     animateParticles();
     window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
 
-    // Данные профиля лечения (оригинальные названия)
+    // Данные профиля лечения
     const treatments = [
         { name:"Кариес", percent:"18%", img:"./images/кариес.jpg", desc:"Лечение кариеса любой сложности." },
         { name:"Гингивит", percent:"16%", img:"images/гингвит.JPG", desc:"Лечение воспаления дёсен, профессиональная гигиена." },
@@ -987,25 +1075,21 @@
         gallery.appendChild(card);
     });
 
-    // Первый ряд кейсов (3 фото)
+    // Кейсы
     const casesFirst = [
         { title:"All-on-4 полная реабилитация", img:"images/all-4.jpg", desc:"Восстановление всей челюсти на 4 имплантатах." },
         { title:"All-on-4 полная реабилитация", img:"images/all-on-4-1.JPG", desc:"Восстановление всей челюсти на 4 имплантатах." },
         { title:"Модели имплантов", img:"images/модель_установки.JPG", desc:"Восстановление зубов винирами из диоксида циркония." }
     ];
-    
-    // Второй ряд кейсов (3 фото)
     const casesSecond = [
         { title:"Модели виниров", img:"images/модель4.JPG", desc:"Восстановление зубов винирами из диоксида циркония." },
         { title:"Модели виниров", img:"images/модель7.JPG", desc:"Восстановление зубов винирами из диоксида циркония." },
         { title:"All-on-4 полная реабилитация", img:"images/модель6-1.jpg", desc:"Восстановление всей челюсти на 4 имплантатах." }
     ];
-    
-    // Третий ряд кейсов (3 новых фото)
     const casesThird = [
-        { title:"Восстановление высоты окклюзии и тотальное протезирование полости рта. Восстановление высоты нижней трети лица", img:"./images/высота_лица.JPG", desc:"Комплексное восстановление прикуса и высоты нижней трети лица с помощью ортопедических конструкций." },
-        { title:"Изготовление временного \"Мерилендского моста\" по показаниям", img:"images/мост.JPG", desc:"Временное протезирование по показаниям с использованием адгезивных технологий." },
-        { title:"Изменение формы фронтальных зубов верхней челюсти", img:"images/форма_зубов.jpg", desc:"Эстетическая коррекция формы и размера передних зубов, создание гармоничной улыбки." }
+        { title:"Восстановление высоты окклюзии и тотальное протезирование", img:"./images/высота_лица.JPG", desc:"Комплексное восстановление прикуса." },
+        { title:"Изготовление временного Мерилендского моста", img:"images/мост.JPG", desc:"Временное протезирование." },
+        { title:"Изменение формы фронтальных зубов", img:"images/форма_зубов.jpg", desc:"Эстетическая коррекция." }
     ];
     
     const casesGrid = document.getElementById('casesGrid');
@@ -1014,14 +1098,12 @@
         card.innerHTML = `<img class="case-img" src="${c.img}" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=${c.title}'"><div class="case-info"><div class="case-title">${c.title}</div><button class="detail-btn" onclick="showCaseDetail('first', ${idx})">Подробнее →</button></div>`;
         casesGrid.appendChild(card);
     });
-    
     const casesGridSecond = document.getElementById('casesGridSecond');
     casesSecond.forEach((c,idx) => {
         const card = document.createElement('div'); card.className = 'case-card';
         card.innerHTML = `<img class="case-img" src="${c.img}" onerror="this.src='https://placehold.co/600x400/E8F0FE/1E6F8F?text=${c.title}'"><div class="case-info"><div class="case-title">${c.title}</div><button class="detail-btn" onclick="showCaseDetail('second', ${idx})">Подробнее →</button></div>`;
         casesGridSecond.appendChild(card);
     });
-    
     const casesGridThird = document.getElementById('casesGridThird');
     casesThird.forEach((c,idx) => {
         const card = document.createElement('div'); card.className = 'case-card';
@@ -1043,74 +1125,28 @@
     document.getElementById('caseModal')?.addEventListener('click',(e)=>{if(e.target===document.getElementById('caseModal')) closeCaseModal();});
     document.getElementById('treatmentModal')?.addEventListener('click',(e)=>{if(e.target===document.getElementById('treatmentModal')) closeTreatmentModal();});
 
-    // ГАЛЕРЕЯ СЕРТИФИКАТОВ (полный список)
+    // Сертификаты
     const certificatesList = [
         { img: "images/diploma1.jpg", title: "Диплом НМУ им. Богомольца, 2001" },
-        { img: "images/diploma3.jpg", title: "Диплом о профессиональной переподготовке, Стомотологическая хирургия, 2019" },
-        { img: "images/diploma2.jpg", title: "Удостоверение о повышении квалификации, Стомотология общей практики, 2016" },
-        { img: "images/cert_24.jpg", title: "Сертификат специалиста Москва 2019 г" },
+        { img: "images/diploma3.jpg", title: "Диплом о профессиональной переподготовке, 2019" },
+        { img: "images/diploma2.jpg", title: "Удостоверение о повышении квалификации, 2016" },
+        { img: "images/cert_24.jpg", title: "Сертификат специалиста Москва 2019" },
         { img: "images/cert4.jpg", title: "Ортопедия на имплантах, 2017"},
-        { img: "images/cert1.jpg", title: "Технологии профилактики в технической стомотологии, 2004" },
-        { img: "images/cert_6.jpg", title: "Применение совеременных никель-титановых интструментов Proteper" },
-        { img: "images/cert2.jpg", title: "Безметалловое протезирование" },
-        { img: "images/cert_7.jpg", title: "Международный семинар имплантации" },
-        { img: "images/cert_26.jpg", title: "Отбеливание зубов" },
-        { img: "images/cert_30.jpg", title: "Эстетическая реабилитация зубов" },
-        { img: "images/cert_11.jpg", title: "Безметалловое протезирование, 2009" },
-        { img: "images/cert_10.jpg", title: "Организация лечебной работы в стомотологической клинике, 2010" },
-        { img: "images/cert_12.jpg", title: "Имплантация и имплантация на суперструктурах, 2017" },
-        { img: "images/cert_13.jpg", title: "Новые подходы к эндодонтическому лечению, 2014" },
-        { img: "images/cert_14.jpg", title: "Ортопедическая стомотология, 2002" },
-        { img: "images/cert_15.jpg", title: "Ортопедическая стомотология, 2007" },
-        { img: "images/cert_35.jpg", title: "Конгресс профессиональная имплантология, 2014" },
-        { img: "images/cert_17.jpg", title: "Керамические вкладки, 2002" },
-        { img: "images/cert_18.jpg", title: "Osstem имплантация" },
-        { img: "images/cert_19.jpg", title: "Техника эндодонтического доступа, 2015" },
-        { img: "images/cert_20.jpg", title: "Отбелиание зубов, 2016" },
-        { img: "images/cert_21.jpg", title: "Конгресс Стомотологов" },
-        { img: "images/cert_22.jpg", title: "Достижение оптимальной эстетики в ортопедической стомотологии, 2008" },
-        { img: "images/cert_23.jpg", title: "Просто об эстетике, 2016" },
-        { img: "images/cert_24.jpg", title: "Клинические аспекты изготовления безметалловых конструкций, 2015" },
-        { img: "images/cert_25.jpg", title: "Трехмерная радиодиагностика в стомотологии, 2012" },
-        { img: "./images/cert_8.JPG", title: "Функциональные и эссетические особенности реставрации жевательной группы зубов, 2012" },
-        { img: "images/cert_27.jpg", title: "Месяц здоровой улыбки, 2010" },
-        { img: "images/cert_28.jpg", title: "Основы дентальной имплантологии" },
-        { img: "images/cert_29.jpg", title: "Клинические и технические аспекты применения CAD/CAM, 2009" },
-        { img: "images/cert_9.jpg", title: "Сложная анатомия корневых каналов и эндодонтический доступ, 2016" },
-        { img: "images/cert_31.jpg", title: "Профессионалльное тестирование пасту Colgate, 2010" },
-        { img: "images/cert_32.jpg", title: "Протезирование на имплантах. Базовый курс, 2003" },
-        { img: "images/cert_33.jpg", title: "Малоинвазивная эстетическая реабилитация зубов, 2018" },
-        { img: "images/cert_34.jpg", title: "Эндодонтическое лечение, реставрация, 2002" },
-        { img: "images/cert_36.jpg", title: "Съемное протезирование, 2017" },
-        { img: "images/cert_37.jpg", title: "Инновационные технологии в эстетичекой стомотологии, 2011" },
-        { img: "images/cert_38.jpg", title: "Инновационные технологии в эстетической стомотологии, 2001" }
+        { img: "images/cert1.jpg", title: "Технологии профилактики, 2004" }
     ];
-
     const certificatesGrid = document.getElementById('certificatesGrid');
-    certificatesList.forEach((cert, index) => {
+    certificatesList.forEach((cert) => {
         const certDiv = document.createElement('div');
         certDiv.className = 'cert-item';
-        certDiv.innerHTML = `
-            <img src="${cert.img}" alt="${cert.title}" onerror="this.src='https://placehold.co/400x560/E8F0FE/1E6F8F?text=${encodeURIComponent(cert.title)}'">
-            <p>${cert.title}</p>
-        `;
-        certDiv.querySelector('img').addEventListener('click', (e) => {
-            e.stopPropagation();
-            openImageModal(e.target.src);
-        });
+        certDiv.innerHTML = `<img src="${cert.img}" alt="${cert.title}" onerror="this.src='https://placehold.co/400x560/E8F0FE/1E6F8F?text=${encodeURIComponent(cert.title)}'"><p>${cert.title}</p>`;
+        certDiv.querySelector('img').addEventListener('click', (e) => { e.stopPropagation(); openImageModal(e.target.src); });
         certificatesGrid.appendChild(certDiv);
     });
 
-    // Прокрутка галереи
     const certContainer = document.getElementById('certificatesContainer');
-    document.getElementById('certScrollLeft')?.addEventListener('click', () => {
-        certContainer.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-    document.getElementById('certScrollRight')?.addEventListener('click', () => {
-        certContainer.scrollBy({ left: 320, behavior: 'smooth' });
-    });
+    document.getElementById('certScrollLeft')?.addEventListener('click', () => { certContainer.scrollBy({ left: -320, behavior: 'smooth' }); });
+    document.getElementById('certScrollRight')?.addEventListener('click', () => { certContainer.scrollBy({ left: 320, behavior: 'smooth' }); });
 
-    // Модалка изображений
     const modalDiv = document.getElementById('modalZoom');
     const modalImg = document.getElementById('modalImgZoom');
     function openImageModal(src) { modalDiv.style.display = 'flex'; modalImg.src = src; }
@@ -1129,14 +1165,15 @@
     document.getElementById('modalBookingForm')?.addEventListener('submit', (e) => handleFormSubmit(e.target, e));
     
     const modalBooking = document.getElementById('modalBooking');
-    document.getElementById('openModalBtn')?.addEventListener('click', () => { modalBooking.style.display = 'flex'; });
     document.getElementById('closeModalBtn')?.addEventListener('click', () => { modalBooking.style.display = 'none'; });
     window.addEventListener('click', (e) => { if(e.target === modalBooking) modalBooking.style.display = 'none'; });
     
-    // Кнопка "Проложить маршрут" — открывает Яндекс.Карты с точным адресом
-    document.getElementById('openMapModalBtn')?.addEventListener('click', () => {
-        const address = encodeURIComponent("Россия, Шахты, проспект Клименко, 12");
-        window.open(`https://yandex.ru/maps/?text=${address}&mode=search`, '_blank');
+    // Кнопки "Проложить маршрут" для обеих карт
+    document.querySelectorAll('.openMapBtn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const address = encodeURIComponent("Россия, Шахты, проспект Клименко, 12");
+            window.open(`https://yandex.ru/maps/?text=${address}&mode=search`, '_blank');
+        });
     });
 </script>
 </body>
